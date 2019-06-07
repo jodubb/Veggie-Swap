@@ -1,0 +1,498 @@
+.list-group-item {
+  line-height: 2.5;
+}
+.offerImage {
+  border: 1px solid black;
+  height:40px;
+  width: 40px;
+  border-radius: 20px;
+  margin: 10px
+}
+#loginBox{
+  margin-bottom: 1%;
+  background-image: url("/images/veggiemain.jpg");
+  
+}
+#signupbox {
+  margin-bottom: 1%;
+  background-image: url("/images/soil.jpg");
+  background-size: cover;
+}
+.registrationbg {
+  background-image: url("/images/soil.jpg");
+  background-size: cover;
+  
+}
+.w3-panel{
+  margin: 25px;
+  text-align: left;
+  /* background-image: url("/images/soil.jpg"); */
+  padding: 25px 25px 25px 25px;
+  background-size: cover;
+  /* background-image: url("/images/veggiemain.jpg") */
+}
+.w3-button {
+  margin: 15px;
+}
+body,h1,h2,div,form,label,h3,a,h4,th {
+  font-family: 'Dosis', sans-serif;
+  /* color: #005580; */
+  /* color:black; */
+}
+.offerBox {
+  border: 1px solid black;
+  width:90%;
+  padding: 10px;
+  padding-left:20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+.offerBox:hover{
+  cursor: pointer;
+  background-color: rgb(135, 216, 135);
+  color:white;
+  /* border-color: darkolivegreen; */
+  border:4px solid darkolivegreen;
+}
+.offers {
+  display: inline-block;
+  width: 45%;
+}
+
+.offerrer {
+  margin-top: 5px;
+}
+.offerSection {
+  align-items:center;
+}
+#offerbutton {
+  align-items: center;
+}
+#makeOffer, #makeWant{
+  padding: 20px;
+  width:80%;
+  text-align: center;
+  margin:auto;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+#makeOffer:hover{
+  background-color: rgb(135, 216, 135);
+}
+#makeWant:hover{
+  background-color:  rgb(135, 216, 135);
+}
+input {
+  border: 0;
+  outline: 0;
+  background: white;
+  border-bottom: 1px solid lightgray;
+  font-family: 'Dosis', sans-serif;
+  color: #005580;
+}
+input:focus {
+  border-bottom: none;
+} 
+input:valid {
+  border-bottom: none;
+}
+.and {
+  text-align:center;
+  padding: 10px;
+}
+.offerButton {
+  align-items:center;
+  border:2px solid gray;
+  /* display:block; */
+  border-radius:5px;
+  margin:auto;
+  margin-top:20px;
+  padding:10px;
+}
+.offerButton:hover {
+  cursor: pointer;
+  background-color: rgb(135, 216, 135);
+  color:white;
+}
+.submitOffer {
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+body, html {
+  min-height: 100%;
+  transition: background-color .5s;
+}
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.5;
+}
+.w3-bar-block{
+  text-align: left;
+}
+footer{
+  background-image: url("/images/veggiemain.jpg");
+  position: fixed;
+  display: block;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  margin-top: 5%;
+  bottom:0;
+  height: 60px;
+}
+footer a, footer ul {
+  margin: 2px;
+}
+div#bloodhound {
+  margin-bottom: 25%;
+}
+#register{
+  margin-bottom: 9%;
+}
+.w3-jumbo{
+  opacity: .65;
+  background-color: lightgray;
+  text-align: center;
+  margin: 0px;
+  /* position: fixed; */
+  /* top:0; */
+  /* width: 100%; */
+}
+#curr_list{
+  position: absolute;
+  left: 2%;
+  height: 60px;
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+  top: 4px;
+}
+#logo{
+  position: relative;
+  height: 50px;
+  width: 50px;
+  margin-top: 5%
+}
+/* #myDashboard{
+  margin-bottom: 10%;
+} */
+.w3-main, .main-content {
+  margin-bottom: 35%;
+}
+.index-header{
+  margin-top: 0px;
+  /* top:0;
+  width:100%;
+  position:fixed;
+  margin-bottom: 10%; */
+}
+#mySidebar {
+  /* height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top:0;
+  left:0; */
+  overflow-x: hidden;
+  background-image: url("/images/dirtyhands.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  
+}
+.w3-modal {
+  display:none;
+}
+#modalData {
+  width: 100%;
+}
+.w3-modal-content {
+width: 50%;
+}
+.modalBtn {
+  z-index: 10;
+}
+.index-main {
+  margin-bottom:35%;
+}
+/* .bgimg {
+  margin-bottom:30%;
+} */  
+.logopic {
+  background-image: url("/images/veggieswap.png");
+  width: 300px; 
+height: 176px;
+ position: absolute;
+ align-self: auto;
+ background-repeat: no-repeat;
+ top: 3%;
+ left: 35%;
+}
+.logopic2 {
+  background-image: url("/images/veggieswap.png");
+  width: 300px; 
+height: 176px;
+ position: absolute;
+ align-self: auto;
+ background-repeat: no-repeat;
+ top: 83%;
+ left: 5%;
+}
+.bgdesign {
+  background-image: url("/images/backgrd.jpg") !important;
+  /* background-size: 100vh; */
+  background-image: cover;
+};
+/* .bgdesign { */
+  /* background-image: url("/images/backgrd.jpg") !important; */
+  /* background-size: 100%;
+background-color: red; */
+.h2 {
+  /* text-align: justify;
+  text-align: center;
+  text-align: right; */
+  /* text-shadow: 3px 2px black; */
+}
+
+.list-group-item {
+  line-height: 2.5;
+}
+
+.offerImage {
+  border: 2px solid black;
+  height:40px;
+  width: 40px;
+  border-radius: 20px;
+  margin: 10px;
+  padding: -5px;
+}
+
+/* .offers {
+  display: inline-block;
+  width: 30%;
+} */
+.offerrer {
+  margin-top: 5px;
+}
+.offerSection {
+  align-items:center;
+}
+
+#offerbutton {
+  align-items: center;
+}
+
+#makeOffer, #makeWant{
+  padding: 20px;
+  width:80%;
+  text-align: center;
+  margin:auto;
+  border: 2px solid gray;
+  border-radius: 5px;
+
+}
+
+#makeOffer:hover{
+  background-color: rgb(135, 216, 135);
+}
+
+#makeWant:hover{
+  background-color:  rgb(135, 216, 135);
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid lightgray;
+}
+
+input:focus {
+  border-bottom: none;
+} 
+input:valid {
+  border-bottom: none;
+}
+
+.and {
+  text-align:center;
+  text-emphasis-color: black;
+}
+
+.offerButton {
+  align-items:center;
+  border:2px solid gray;
+  border-radius:5px;
+  margin:auto;
+  margin-top:20px;
+  padding:10px;
+  background-color: rgb(218, 247, 218); 
+  margin-bottom:20px;
+}
+
+.offerButton:hover {
+  cursor: pointer;
+  background-color: rgb(135, 216, 135);
+  color:white;
+}
+
+.submitOffer {
+  text-align: center;
+}
+
+.background{
+  background-image: url("/images/backgrd.jpg");
+  background-size: 100%;
+
+};
+
+#home{
+  font-size: 1000px !important;
+}
+
+
+.w3-padding-24 {
+  overflow: hidden;
+}
+
+.logo-container {
+  background-image: url("/images/veggieswap.png");
+    width: 300px; 
+  height: 176px;
+   position: absolute;
+   align-self: auto;
+   background-repeat: no-repeat;
+   top: 15%;
+   left: 10%;
+   /* padding: 200px; */
+  /* position: absolute;
+  border: 50px; */
+  /* border-left: 50%; */
+/* left: 30px; */
+/* text-align: center !important;
+background-image: url(../assets/img/veggielogo4.jpg);
+height: 100px;
+width:100px;
+align-content: center !important; */
+}
+
+h5{
+  text-shadow: 1px 1px black;
+}
+
+#borderimage{
+  border: 40px solid;
+  padding: 15px;
+  border-image: url("/images/borderimg.jpg") 70 round;
+  background: rgb(196, 178, 178);
+}
+
+#makeOffer{
+  border-color: black;
+  background: rgb(218, 247, 218);
+}
+
+#makeWant{
+  border-color: black;
+  background: rgb(218, 247, 218);
+}
+
+/* .hiddenInfo {
+  display:none;
+} */
+
+.offerNo1, .offerNo2, .offerNo3, .offerNo4, .offerNo5, .offerNo6, .offerNo7, .offerNo8, .offerNo9, .offerNo10 {
+  border: 2px solid black;
+  background-color: rgb(218, 247, 218);
+  width:45%;
+  padding: 10px;
+  padding-left:20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.offerNo1:hover, .offerNo2:hover, .offerNo3:hover, .offerNo4:hover, .offerNo5:hover, .offerNo6:hover, .offerNo7:hover, .offerNo8:hover, .offerNo9:hover, .offerNo10:hover{
+  cursor: pointer;
+  background-color: rgb(135, 216, 135);
+  color:white;
+  margin: 7px;
+  border:4px solid darkolivegreen;
+}
+.hidden1, .hidden2, .hidden3, .hidden4, .hidden5, .hidden6, .hidden7, .hidden8, .hidden9, .hidden10 {
+  display:none;
+}
+
+table {
+  font-family: arial, sans-serif;
+  /* border-collapse: collapse; */
+}
+
+tbody {
+  align-content:center;
+}
+
+td, th {
+  border: 3px solid darkolivegreen;
+  border-radius:2px;
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  background-color: #9db9cf;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(218, 247, 218);
+}
+tr:nth-child(odd) {
+  background-color: #f1efef;
+}
+
+#closedTransactions {
+  width:80%;
+  margin:auto;
+}
+
+.pendingOfferNo1, .pendingOfferNo2, .pendingOfferNo3, .pendingOfferNo4, .pendingOfferNo5, .pendingOfferNo6, .pendingOfferNo7, .pendingOfferNo8, .pendingOfferNo9, .pendingOfferNo10 {
+  border: 2px solid black;
+  background-color: rgb(243, 216, 199);
+  width:45%;
+  padding: 10px;
+  padding-left:20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.pendingOfferNo1:hover, .pendingOfferNo2:hover, .pendingOfferNo3:hover, .pendingOfferNo4:hover, .pendingOfferNo5:hover, .pendingOfferNo6:hover, .pendingOfferNo7:hover, .pendingOfferNo8:hover, .pendingOfferNo9:hover, .pendingOfferNo10:hover{
+  cursor: pointer;
+  background-color: rgb(214, 164, 127);
+  color:white;
+  margin: 7px;
+  border:4px solid rgb(223, 109, 43);
+}
+
+.pendingOffers {
+  display: inline-block;
+  width: 45%;
+}
+
+.hiddenPending1, .hiddenPending2, .hiddenPending3, .hiddenPending4, .hiddenPending5, .hiddenPending6, .hiddenPending7, .hiddenPending8, .hiddenPending9, .hiddenPending10 {
+  display:none;
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<title>VEGGIE EXCHANGE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{{!-- <link rel="stylesheet" type="text/css" href="../veggie exchange/assets/style.css"> --}}
+<link rel="stylesheet" type="text/css"  href="../public/styles/styles.css">
+<link rel="stylesheet" type="text/css"  href="../public/styles/style.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "Lato", sans-serif
+    }
+
+    .mySlides {
+        display: none
+    }
+
+    .w3-tag,
+    .fa {
+        cursor: pointer
+    }
+
+    .w3-tag {
+        height: 15px;
+        width: 15px;
+        padding: 0;
+        margin-top: 6px
+    }
+</style>
+
+<body>
+
+    <!-- Links (sit on top) -->
+
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-black">
+            <div class="w3-col s3">
+                <a href="#" class="w3-button w3-block">Home</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#offers" class="w3-button w3-block">Current Offers</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#transactions" class="w3-button w3-block">Transactions</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#contact" class="w3-button w3-git block">Make an Offer</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Content -->
+    <div class="background">
+         <div class="logo-container"></div>
+    <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px;height:80%">
+
+        <div class="w3-panel">
+            
+            <p></p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Slideshow -->
+        <div class="w3-container">
+            <div class="w3-display-container mySlides">
+                <img src="/images/veggiemain.jpg" style="width:100%">
+                <div class="w3-display-middle w3-container w3-padding-32">
+                    <span class="w3-white w3-padding-large w3-animate-bottom">TRADE VEGGIES</span>
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img src="/images/handwithveggies.jpg" style="width:100%">
+                <div class="w3-display-middle w3-container w3-padding-32">
+                    <span class="w3-white w3-padding-large w3-animate-bottom">MEET YOUR NEIGHBORS</span>
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img src="/images/womanwithcarrots.jpg" style="width:100%">
+                <div class="w3-display-middle w3-container w3-padding-32">
+                    <span class="w3-white w3-padding-large w3-animate-bottom">GROW A COMMUNITY</span>
+                </div>
+            </div>
+
+            <!-- Slideshow next/previous buttons -->
+            <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+                <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i>
+                </div>
+                <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i>
+                </div>
+
+                <div class="w3-center">
+                    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+                        onclick="currentDiv(1)"></span>
+                    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+                        onclick="currentDiv(2)"></span>
+                    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+                        onclick="currentDiv(3)"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Grid -->
+        <div class="w3-row-padding" id="offers">
+            
+            <div class="w3-center w3-padding-64">
+                <p id="borderimage">
+                <span class="w3-xlarge w3-bottombar w3-border-black w3-padding-16 black strong">CURRENT OFFERS</span>
+                 <br> 
+                 <br>
+                <h5>View Recent Listings:</h5>
+                </p>
+                <div class="offerSection">
+                    <script>
+                        var offerCounter=0;
+                    </script>
+
+                        {{#each openDeals}}
+                                <script>
+                                    if (offerCounter <10) {
+                                        offerCounter ++;
+                                        var newOffer = $("<div>")
+                                        newOffer.addClass("offerNo" + offerCounter.toString());
+                                        newOffer.addClass("offers");
+                                        var imageHTML = "";
+                                        
+                                        newOffer.html(`<div>
+                                            <img src='https://images.unsplash.com/photo-1496196614460-48988a57fccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' alt="userImage" height="45" width="45" class="offerImage">
+                                        </div> 
+                                        <div> 
+                                            <h4>Offering: {{this.offeredQTY}} {{this.offeredUnits}} {{this.offered}}</h4>
+                                        </div>
+                                        and
+                                        <div>
+                                            <h4 class= "forUser">Asking: {{this.askedQTY}} {{this.offeredUnits}} {{this.asked}}</h4>
+                                        </div>`);
+                                        var hiddenPerOffer = $("<div>");
+                                        hiddenPerOffer.addClass("hidden" + offerCounter.toString());
+                                        hiddenPerOffer.addClass("toggle" + offerCounter.toString());
+                                        hiddenPerOffer.html(`
+                                            <div>  Username:  {{this.User.username}} </div>
+                                            <div>  Email:  {{this.User.email}} </div>
+                                            <button class = "deleteDeal" data-dealid = {{this.id}}>Delete</button>
+                                            <button class = "acceptDeal" data-dealid = {{this.id}}>Accept</button>`);
+                                        newOffer.append(hiddenPerOffer);
+                                        $(".offerSection").append(newOffer);
+                                    };
+                                </script>   
+                        {{/each}}
+                        <script>
+                            var pendingOfferCounter = 0;
+                        </script>
+                        {{#each pendingDeals}}
+                        <script>
+                            if (pendingOfferCounter < 10) {
+                                pendingOfferCounter++;
+                                var newPendingOffer = $("<div>")
+                                newPendingOffer.addClass("pendingOfferNo" + pendingOfferCounter.toString());
+                                newPendingOffer.addClass("pendingOffers");
+                                newPendingOffer.addClass("pendingOffer");
+                                var imageHTML = "";
+
+                                newPendingOffer.html(`<div>
+                                            <img src='https://images.unsplash.com/photo-1496196614460-48988a57fccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80' alt="userImage" height="45" width="45" class="offerImage">
+                                        </div> 
+                                        <div> 
+                                            <h4>Offering: {{this.offeredQTY}} {{this.offeredUnits}} {{this.offered}}</h4>
+                                        </div>
+                                        and
+                                        <div>
+                                            <h4 class= "forUser">Asking: {{this.askedQTY}} {{this.offeredUnits}} {{this.asked}}</h4>
+                                        </div>`);
+                                var hiddenPerPendingOffer = $("<div>");
+                                hiddenPerPendingOffer.addClass("hiddenPending" + pendingOfferCounter.toString());
+                                hiddenPerPendingOffer.addClass("togglePending" + pendingOfferCounter.toString());
+                                hiddenPerPendingOffer.html(`
+                                            <div>  Username:  {{this.User.username}} </div>
+                                            <div>  Email:  {{this.User.email}} </div>
+                                            <button class = "deleteDeal" data-dealid = {{this.id}}>Delete</button>
+                                            <button class = "completeDeal" data-dealid = {{this.id}}>Complete</button>`);
+                                newPendingOffer.append(hiddenPerPendingOffer);
+                                $(".offerSection").append(newPendingOffer);
+                            };
+                        </script>
+                        {{/each}}
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div class="w3-row-padding" id="transactions">
+            <div class="w3-center w3-padding-64">
+                <p id="borderimage">
+                <span class="w3-xlarge w3-bottombar w3-border-black w3-padding-16 black strong">TRANSACTIONS</span>
+            <br>
+            <br>
+            <h5>View Recent Swaps:</h5>
+            </p>
+            </div>
+
+            <div class="w3-center">
+                <div class="closedSection w3-center">
+                    <table id="closedTransactions">
+                        <th id="closedOffered">Offered</th>
+                        <th id="closedAsked">Asked</th>
+                        <th id="offerer">Deal Initiator</th>
+                        
+                        <th id="closedTime">Closing Time</th>
+                    </table>
+                    {{#each closedDeals}}
+                        <script>
+                            var newRow = $("<tr>");
+                            var td1 = $("<td>");
+                            var td2 = $("<td>");
+                            var td3 = $("<td>");
+
+                            var td5 = $("<td>");
+                            td1.html("{{this.offered}} {{this.offeredQTY}} {{this.offeredUnits}}");
+                            td2.html("{{this.asked}}  {{this.askedQTY}} {{this.askedUnits}}");
+                            td3.html("{{this.User.username}}");
+
+                            td5.html("{{this.updatedAt}}");
+                            newRow.append(td1);
+                            newRow.append(td2);
+                            newRow.append(td3);
+
+                            newRow.append(td5);
+                            $("#closedTransactions").append(newRow);
+                        </script>
+                    {{/each}}
+                </div>
+            </div>    
+        </div>
+
+        <!-- Contact -->
+        <div class="w3-center w3-padding-64" id="contact">
+            <p id="borderimage">
+            <span class="w3-xlarge w3-bottombar w3-border-black w3-padding-16 black">MAKE AN OFFER!</span>
+       </p>
+        </div>
+{{!-- class="w3-input w3-border w3-hover-border-black" --}}
+        <form action="/action_page.php" target="_blank">
+            <div id="makeOffer">
+                <label>Offering: </label>
+                <input class="offerInput" style="width:30%;" type="text" name="offering" id='offered'
+                    required>
+            
+            
+                <label>Offer Quantity: </label>
+                <input class="offerInput" style="width:10%;" type="number" name="offerQty" id='offeredQTY'
+                    required>
+                <select name="offerUnitType" size="1" id='offeredUnits'>
+                    <option value="lbs">lbs.</option>
+                    <option value="oz">oz.</option>
+                    <option value="dozen">dozen</option>
+                    <option value="units">(units)</option>
+                </select>   
+            </div>
+            <div class="and">AND</div>
+            <div id="makeWant">
+                <label>Asking: </label>
+                <input class="offerInput" style="width:30%;" type="text" name="wanting" id ='asked' required>
+            
+            
+                <label>Quantity wanted</label>
+                <input class="offerInput" style="width:10%;" type="number" name="wantQty" id ='askedQTY' required>
+                <select name="offerUnitType" size="1" id = 'askedUnits'>
+                    <option value="lbs">lbs.</option>
+                    <option value="oz">oz.</option>
+                    <option value="dozen">dozen</option>
+                    <option value="units">(units)</option>
+                </select>
+            </div>
+            <br>
+            <div class="submitOffer"><button type="submit" class="offerButton"><strong>Post Offer!</strong></button></div>
+        </form>
+        
+    </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="w3-container w3-light-grey w3-center">
+        <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    </footer>
+
+
+    <script>
+        // Slideshow
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demodots");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+    </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script> 
+    var offer1Counter = 0;
+    $(document.body).on("click", ".offerNo1", function() {
+        console.log("Test");
+        console.log(offer1Counter);
+        console.log(this);
+        if (offer1Counter % 2 === 0 ) {
+            $(".toggle1").removeClass("hidden1");
+            offer1Counter++;
+        } else {
+            $(".toggle1").addClass("hidden1");
+            offer1Counter++;
+        }
+    }) 
+    var offer2Counter = 0;
+    $(document.body).on("click", ".offerNo2", function() {
+        console.log("Test");
+        console.log(offer2Counter);
+        if (offer2Counter % 2 === 0 ) {
+            $(".toggle2").removeClass("hidden2");
+            offer2Counter++;
+        } else {
+            $(".toggle2").addClass("hidden2");
+            offer2Counter++;
+        }
+    }) 
+    var offer3Counter = 0;
+    $(document.body).on("click", ".offerNo3", function() {
+        console.log("Test");
+        console.log(offer3Counter);
+        if (offer3Counter % 2 === 0 ) {
+            $(".toggle3").removeClass("hidden3");
+            offer3Counter++;
+        } else {
+            $(".toggle3").addClass("hidden3");
+            offer3Counter++;
+        }
+    }) 
+    var offer4Counter = 0;
+    $(document.body).on("click", ".offerNo4", function() {
+        console.log("Test");
+        console.log(offer4Counter);
+        if (offer4Counter % 2 === 0 ) {
+            $(".toggle4").removeClass("hidden4");
+            offer4Counter++;
+        } else {
+            $(".toggle4").addClass("hidden4");
+            offer4Counter++;
+        }
+    }) 
+    var offer5Counter = 0;
+    $(document.body).on("click", ".offerNo5", function() {
+        console.log("Test");
+        console.log(offer5Counter);
+        if (offer5Counter % 2 === 0 ) {
+            $(".toggle5").removeClass("hidden5");
+            offer5Counter++;
+        } else {
+            $(".toggle5").addClass("hidden5");
+            offer5Counter++;
+        }
+    }) 
+    var offer6Counter = 0;
+    $(document.body).on("click", ".offerNo6", function() {
+        console.log("Test");
+        console.log(offer6Counter);
+        if (offer6Counter % 2 === 0 ) {
+            $(".toggle6").removeClass("hidden6");
+            offer6Counter++;
+        } else {
+            $(".toggle6").addClass("hidden6");
+            offer1Counter++;
+        }
+    }) 
+    var offer7Counter = 0;
+    $(document.body).on("click", ".offerNo7", function() {
+        console.log("Test");
+        console.log(offer7Counter);
+        if (offer7Counter % 2 === 0 ) {
+            $(".toggle7").removeClass("hidden7");
+            offer7Counter++;
+        } else {
+            $(".toggle7").addClass("hidden7");
+            offer7Counter++;
+        }
+    }) 
+    var offer8Counter = 0;
+    $(document.body).on("click", ".offerNo8", function() {
+        console.log("Test");
+        console.log(offer8Counter);
+        if (offer8Counter % 2 === 0 ) {
+            $(".toggle8").removeClass("hidden8");
+            offer8Counter++;
+        } else {
+            $(".toggle8").addClass("hidden8");
+            offer8Counter++;
+        }
+    }) 
+    var offer9Counter = 0;
+    $(document.body).on("click", ".offerNo9", function() {
+        console.log("Test");
+        console.log(offer9Counter);
+        if (offer9Counter % 2 === 0 ) {
+            $(".toggle9").removeClass("hidden9");
+            offer9Counter++;
+        } else {
+            $(".toggle9").addClass("hidden9");
+            offer9Counter++;
+        }
+    }) 
+    var offer10Counter = 0;
+    $(document.body).on("click", ".offerNo10", function() {
+        console.log("Test");
+        console.log(offer10Counter);
+        if (offer10Counter % 2 === 0 ) {
+            $(".toggle10").removeClass("hidden10");
+            offer10Counter++;
+        } else {
+            $(".toggle10").addClass("hidden10");
+            offer10Counter++;
+        }
+    })
+            var pendingoffer1Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo1", function () {
+            console.log("Test");
+            
+            console.log(this);
+            if (pendingoffer1Counter % 2 === 0) {
+                $(".togglePending1").removeClass("hiddenPending1");
+                pendingoffer1Counter++;
+            } else {
+                $(".togglePending1").addClass("hiddenPending1");
+                pendingoffer1Counter++;
+            }
+        })
+        var pendingoffer2Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo2", function () {
+            console.log("Test");
+            console.log(pendingoffer2Counter);
+            if (pendingoffer2Counter % 2 === 0) {
+                $(".togglePending2").removeClass("hiddenPending2");
+                pendingoffer2Counter++;
+            } else {
+                $(".togglePending2").addClass("hiddenPending2");
+                pendingoffer2Counter++;
+            }
+        })
+        var pendingoffer3Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo3", function () {
+            console.log("Test");
+            console.log(pendingoffer3Counter);
+            if (pendingoffer3Counter % 2 === 0) {
+                $(".togglePending3").removeClass("hiddenPending3");
+                pendingoffer3Counter++;
+            } else {
+                $(".togglePending3").addClass("hiddenPending3");
+                pendingoffer3Counter++;
+            }
+        })
+        var pendingoffer4Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo4", function () {
+            console.log("Test");
+            console.log(pendingoffer4Counter);
+            if (pendingoffer4Counter % 2 === 0) {
+                $(".togglePending4").removeClass("hiddenPending4");
+                pendingoffer4Counter++;
+            } else {
+                $(".togglePending4").addClass("hiddenPending4");
+                pendingoffer4Counter++;
+            }
+        })
+        var pendingoffer5Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo5", function () {
+            console.log("Test");
+            console.log(pendingoffer5Counter);
+            if (pendingoffer5Counter % 2 === 0) {
+                $(".togglePending5").removeClass("hiddenPending5");
+                pendingoffer5Counter++;
+            } else {
+                $(".togglePending5").addClass("hiddenPending5");
+                pendingoffer5Counter++;
+            }
+        })
+        var pendingoffer6Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo6", function () {
+            console.log("Test");
+            console.log(pendingoffer6Counter);
+            if (pendingoffer6Counter % 2 === 0) {
+                $(".togglePending6").removeClass("hiddenPending6");
+                pendingoffer6Counter++;
+            } else {
+                $(".togglePending6").addClass("hiddenPending6");
+                pendingoffer6Counter++;
+            }
+        })
+        var pendingoffer7Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo7", function () {
+            console.log("Test");
+            console.log(pendingoffer7Counter);
+            if (pendingoffer7Counter % 2 === 0) {
+                $(".togglePending7").removeClass("hiddenPending7");
+                pendingoffer7Counter++;
+            } else {
+                $(".togglePending7").addClass("hiddenPending7");
+                pendingoffer7Counter++;
+            }
+        })
+        var pendingoffer8Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo8", function () {
+            console.log("Test");
+            console.log(pendingoffer8Counter);
+            if (pendingoffer8Counter % 2 === 0) {
+                $(".togglePending8").removeClass("hiddenPending8");
+                pendingoffer8Counter++;
+            } else {
+                $(".togglePending8").addClass("hiddenPending8");
+                pendingoffer8Counter++;
+            }
+        })
+        var pendingoffer9Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo9", function () {
+            console.log("Test");
+            console.log(pendingoffer9Counter);
+            if (pendingoffer9Counter % 2 === 0) {
+                $(".togglePending9").removeClass("hiddenPending9");
+                pendingoffer9Counter++;
+            } else {
+                $(".togglePending9").addClass("hiddenPending9");
+                pendingoffer9Counter++;
+            }
+        })
+        var pendingoffer10Counter = 0;
+        $(document.body).on("click", ".pendingOfferNo10", function () {
+            console.log("Test");
+            console.log(pendingoffer10Counter);
+            if (pendingoffer10Counter % 2 === 0) {
+                $(".togglePending10").removeClass("hiddenPending10");
+                pendingoffer10Counter++;
+            } else {
+                $(".togglePending10").addClass("hiddenPending10");
+                pendingoffer10Counter++;
+            }
+        })   
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "root",
+    "password": "zachary",
+    "database": "veggieExchange",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "veggieExchange",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "use_env_variable": "CLEARDB_DATABASE_URL"
+  }
+}
